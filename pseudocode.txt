@@ -1,0 +1,23 @@
+HTML
+- Form (Name, Location)
+
+JS
+
+onClick
+- Store user information and Location
+- getWeather()
+- generatePlaylist()
+- renderLink()
+
+getWeather
+- run ajax with weather api to get current weather conditions
+- return weather condition
+
+generatePlaylist
+- if conditions for weather
+- ajax call to spotify api
+- return spotify-link
+
+renderLink
+- clear DOM elements
+- render the link to the screen
