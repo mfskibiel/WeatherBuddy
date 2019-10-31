@@ -1,0 +1,23 @@
+.row{
+    background: lightblue;
+    padding: 0px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+img{
+    width: 200px;
+}
+
+.nav{
+    padding-top: 30px;
+}
+
+.nav-link{
+
+    color: white;
+}
+
+form{
+    margin: 0 auto;
+}
