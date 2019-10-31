@@ -25,9 +25,11 @@ $("#submit").on('click', function () {
             if (rain1h > 0) {
                 for (playlist of playlists) {
                     if (playlist.name === "Rain") {
-                        console.log(playlist.name);     //displays playlist with the name of Rain
+                        console.log(playlist.external_urls.spotify);     //displays playlist with the name of Rain
+                        var playlistLink = playlist.external_urls.spotify;
+                        renderLink(playlistLink);
                         break;
-                    } 
+                    }
                 }
             }
         });
@@ -39,3 +41,8 @@ $("#submit").on('click', function () {
     });
 
 });
+
+function renderLink(link) {
+    var newdiv = $("<div>").html(`<a href=${link}>Your Rainy Day Playlist</a>`);
+    $("body").append(newdiv);
+}
