@@ -10,8 +10,10 @@ $("#submit").on('click', function () {
     }).done(function (response) {
         const rain1h = $(response)[0].rain['1h'];
 
+        console.log($(response))
+
         // Use your own token (this is just an example)
-        var token = 'BQA6K9PdygF5EipwKMKk1sANSe-JMO-eqKkLPdW3e5vb4DKfMTgWvlPxqSBzOV6YM4t-wX71VgO2-411xXF4GgNacwgAFMNt5PV6eXT9r-J2sy97SboSX42hOt3paKsjMV9qNKRidafEG2bFxo83PXm0-5vCABXeG4XqUh718Wj_Ymk4FQ'
+        var token = 'BQARmlbkIX-kN4Jy0UfAeH551a-eTwSAbS7-uIrnmSu_LRzEig0LExHGFQzcFSah_Sf2nTOna1oy76mTThIY8rDV6ST-OJXVjv3LE0PYdMT4Q-sfW1NthqaryTcLIRyxbfTZvGdbKnPVJiK1b4nGYcNrOJjqBsW2wQOfjBYSRO51Zb9dEw'
 
         $.ajax({
             url: 'https://api.spotify.com/v1/users/mfskibiel/playlists/',
@@ -20,10 +22,18 @@ $("#submit").on('click', function () {
             }
         }).then(function (oData) {
             const playlists = oData.items;
-            for (playlist of playlists){
-                console.log(playlist.name);
+            if (rain1h > 0) {
+                for (playlist of playlists) {
+                    if (playlist.name === "Rain") {
+                        console.log(playlist.name);     //displays playlist with the name of Rain
+                        break;
+                    } 
+                }
             }
-        })
+        });
+
+
+
 
 
     });
