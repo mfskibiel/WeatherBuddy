@@ -9,10 +9,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+    <div class="row">
+        <div class="col">
+            
+        </div>
+        <div class="col">
+            <img src="images/weatherBuddy.png" />
+        </div>
+        <div class="col">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class='container'>
         <form>
             <div class="form-group">
@@ -23,7 +44,7 @@
             <button id="submit" type="button" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    
+
     <!-- Keep at bottom so js runs after DOM rendering -->
     <script src='app.js'></script>
 </body>
