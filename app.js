@@ -6,8 +6,9 @@ $("#submit").on('click', function () {
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&apikey=78c2217a0f8204684461043d3c5ef215`;
     $.ajax({
         url: url,
+        method: "GET"
     }).done(function(response) {
-        console.log( $(response) );
+        console.log( $(response).rain );
       });
 
 });
