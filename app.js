@@ -8,7 +8,7 @@ $("#submit").on('click', function () {
         url: url,
         method: "GET"
     }).done(function (response) {
-        const rain1h = $(response)[0].rain['1h'];
+        const rain = $(response)[0].rain;
 
         console.log($(response))
 
@@ -22,7 +22,8 @@ $("#submit").on('click', function () {
             }
         }).then(function (oData) {
             const playlists = oData.items;
-            if (rain1h > 0) {
+            if (rain.hasOwnProperty("1h")) {
+                console.log("has rain");
                 for (playlist of playlists) {
                     if (playlist.name === "Rain") {
                         console.log(playlist.external_urls.spotify);     //displays playlist with the name of Rain
