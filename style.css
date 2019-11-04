@@ -25,6 +25,10 @@ img{
 .container{
     background: whitesmoke;
 }
+.container1{
+
+    text-align: center;
+}
 form{
     text-align: center;
     padding: 20px;
@@ -46,5 +50,7 @@ body {
     background-size: cover;
 }
 
-
+.bio{
+    background: whitesmoke;
+}
 
