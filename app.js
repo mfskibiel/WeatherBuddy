@@ -5,8 +5,6 @@ if (window.location.hash !== "") {
 
     const accessToken = params.get('access_token');
 
-    // store hash in local storage
-
     localStorage.setItem("hash", accessToken);
 
     // get weather condition
@@ -21,29 +19,36 @@ if (window.location.hash !== "") {
             console.log(condition.main);
             if (condition.main === "Rain") {
                 spotifyCall("Rain").then(function (link) {
-                    console.log("It's Raining");
-                    console.log(link);
+
                     renderLink(link, "Here's your rainy day playlist!");
                 });
                 break;
             } else if (condition.main === "Snow") {
                 spotifyCall("Snow").then(function (link) {
-                    console.log("It's snowing");
                     renderLink(link, "Brrrrrrrr, here's a playlist!");
                 });
                 break;
             } else if (condition.main === "Clear") {
                 spotifyCall("Sunshine").then(function (link) {
-                    console.log("Its Sunny");
                     renderLink(link, "It's a beautiful day! Enjoy this playlist!");
                 });
                 break;
+            } else if (condition.main === "Clouds") {
+                spotifyCall("Clouds").then(function (link) {
+                    renderLink(link, "It's a cloudy day!");
+                });
+                break;
+            }  else {
+                spotifyCall("Default").then(function (link) {
+                    renderLink(link, "Enjoy the Playlist!");
+                });
+                break;
             }
-        }
+        };
+
     });
 
     function renderLink(link, linkname) {
-        console.log("test");
         var newdiv = $("<div>").html(`<a href=${link}>${linkname}</a>`);
         $("body").append(newdiv);
     };
@@ -65,9 +70,7 @@ if (window.location.hash !== "") {
             const playlists = oData.items;
             for (playlist of playlists) {
                 if (playlist.name === weatherName) {
-                    //console.log(playlist.external_urls.spotify);     //displays playlist with the name of Rain
                     var playlistLink = playlist.external_urls.spotify;
-                    console.log(playlistLink);
                     return playlistLink;
                 }
             }
