@@ -11,6 +11,7 @@ img{
 
 .nav{
     padding-top: 30px;
+    font-family: 'McLaren', cursive;
 }
 
 .nav-link{
@@ -20,4 +21,5 @@ img{
 
 form{
     margin: 0 auto;
+    font-family: 'McLaren', cursive;
 }
