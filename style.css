@@ -1,6 +1,10 @@
-body{
-    background: grey;
+body {
+    background-image: url("images/rainybackground.jpg");
+    background-position: static; 
+    background-size: cover;
+    transition: background-image 1s linear;
 }
+
 .row{
     background: lightblue;
     padding: 0px;
@@ -24,7 +28,11 @@ img{
 
 .container{
     background: whitesmoke;
+    border-radius: 25px;
+    padding: 20px;
+
 }
+
 form{
     text-align: center;
     padding: 20px;
@@ -40,11 +48,9 @@ form{
     font-family: 'McLaren', cursive;
 }
 
-body {
-    background-image: url("images/clouds.jpg");
-    background-position: static; 
-    background-size: cover;
-}
+
+
+
 
 
 
