@@ -30,53 +30,52 @@ if (window.location.hash !== "") {
 
     $.ajax({
         url: url,
-        method: "GET"
-    }).done(function (response) {
-        const weatherCondition = response.weather;
-        for (condition of weatherCondition) {
-            console.log(condition.main);
-            if (condition.main === "Rain") {
-                spotifyCall("Rain").then(function (link) {
+        method: "GET",
+        success: function (response) {
+            const weatherCondition = response.weather;
+            for (condition of weatherCondition) {
+                console.log(condition.main);
+                if (condition.main === "Rain") {
+                    spotifyCall("Rain").then(function (link) {
 
-                    renderLink(link, "Here's your rainy day playlist!");
-                });
-                break;
-            } else if (condition.main === "Snow") {
-                spotifyCall("Snow").then(function (link) {
-                    renderLink(link, "Brrrrrrrr, here's a playlist!");
-                });
-                break;
-            } else if (condition.main === "Clear") {
-                spotifyCall("Sunshine").then(function (link) {
-                    renderLink(link, "It's a beautiful day! Enjoy this playlist!");
-                });
-                break;
-            } else if (condition.main === "Clouds") {
-                spotifyCall("Clouds").then(function (link) {
-                    renderLink(link, "It's a cloudy day!");
-                });
-                break;
-            } else {
-                spotifyCall("Default").then(function (link) {
-                    renderLink(link, "Enjoy the Playlist!");
-                });
-                break;
-            }
-        };
 
+                        renderLink(link, "Here's your rainy day playlist!");
+                    });
+                    break;
+                } else if (condition.main === "Snow") {
+                    spotifyCall("Snow").then(function (link) {
+                        renderLink(link, "Brrrrrrrr, here's a playlist!");
+                    });
+                    break;
+                } else if (condition.main === "Clear") {
+                    spotifyCall("Sunshine").then(function (link) {
+                        renderLink(link, "It's a beautiful day! Enjoy this playlist!");
+                    });
+                    break;
+                } else if (condition.main === "Clouds") {
+                    spotifyCall("Clouds").then(function (link) {
+                        renderLink(link, "It's a cloudy day!");
+                    });
+                    break;
+                } else {
+                    spotifyCall("Default").then(function (link) {
+                        renderLink(link, "Enjoy the Playlist!");
+                    });
+                    break;
+                }
+            };
+
+        },
+        error: function (error) {
+            var errorDiv = $("<div>").html(`<p>There was an error, try again!</p>`);
+            $("body").append(errorDiv);
+        }
     });
 
     function renderLink(link, linkname) {
         var newdiv = $("<div>").html(`<a href=${link}>${linkname}</a>`);
         $("body").append(newdiv);
     };
-
-
-    $("#submit").on("click", function () {
-        let location = $("#location").val();
-        localStorage.setItem("city", location);
-        console.log(localStorage.getItem("city"));
-    });
 
     function spotifyCall(weatherName) {
         return $.ajax({
@@ -95,3 +94,9 @@ if (window.location.hash !== "") {
         });
     };
 }
+
+$("#submit").on("click", function () {
+    let location = $("#location").val();
+    localStorage.setItem("city", location);
+    console.log(localStorage.getItem("city"));
+});
