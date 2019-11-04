@@ -1,3 +1,21 @@
+
+const imageArr = ["images/clouds.jpg", "images/rainybackground.jpg", "images/sunnybackground.jpg", "images/snowybackground.jpeg", "images/storms.jpg"]
+
+let i = 1;
+
+setInterval(function () {
+    $('body')
+        // .fadeOut(1000)
+        .css('background-image', `url('${imageArr[i]}')`)
+    // .fadeIn(1000)
+    // .end();
+
+    i++
+    if (i >= imageArr.length) {
+        i = 0;
+    }
+}, 3000);
+
 // if hash exists
 if (window.location.hash !== "") {
 
@@ -19,6 +37,7 @@ if (window.location.hash !== "") {
                 console.log(condition.main);
                 if (condition.main === "Rain") {
                     spotifyCall("Rain").then(function (link) {
+
 
                         renderLink(link, "Here's your rainy day playlist!");
                     });
