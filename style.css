@@ -1,3 +1,6 @@
+body{
+    background: grey;
+}
 .row{
     background: lightblue;
     padding: 0px;
@@ -19,7 +22,20 @@ img{
     color: white;
 }
 
+.container{
+    background: whitesmoke;
+}
 form{
+    text-align: center;
+    padding: 20px;
+}
+ .form-group{
+    padding: 40px;
+    margin: 20px;
+}
+
+#submit{
+    font-size: 26px;
     margin: 0 auto;
     font-family: 'McLaren', cursive;
 }
