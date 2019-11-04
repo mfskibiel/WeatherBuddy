@@ -39,3 +39,12 @@ form{
     margin: 0 auto;
     font-family: 'McLaren', cursive;
 }
+
+body {
+    background-image: url("images/clouds.jpg");
+    background-position: static; 
+    background-size: cover;
+}
+
+
+
