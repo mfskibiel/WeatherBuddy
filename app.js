@@ -1,5 +1,5 @@
 
-const imageArr = ["images/clouds.jpg", "images/rainybackground.jpg", "images/sunnybackground.jpg", "images/snowybackground.jpeg", "images/storms.jpg"]
+const imageArr = ["images/rainybackground.jpg", "images/cloudy.jpg", "images/snowy.jpg", "images/storms.jpg", "images/sunshine.jpg", "images/tornado.jpg"]
 
 let i = 1;
 
@@ -14,7 +14,7 @@ setInterval(function () {
     if (i >= imageArr.length) {
         i = 0;
     }
-}, 3000);
+}, 4000);
 
 // if hash exists
 if (window.location.hash !== "") {
