@@ -16,6 +16,15 @@ setInterval(function () {
     }
 }, 3000);
 
+// If there is already a hash change anchor tag to go get the hash
+if (localStorage.getItem('hash') === null){
+    var newAnchor = $(`<a id='submit' href="https://accounts.spotify.com/en/authorize?client_id=4eaca4681191464aa25a67d6a355ce9f&redirect_uri=http://localhost:3000/&response_type=token" class="btn btn-info">Submit</a>`);
+    $("form").append(newAnchor);
+} else{
+    var newAnchor = $(`<a id='submit' href="localhost:3000/" class="btn btn-info">Submit</a>`);
+    $("form").append(newAnchor);
+}
+
 // if hash exists
 if (window.location.hash !== "") {
 
@@ -30,9 +39,14 @@ if (window.location.hash !== "") {
 }
 
 $("#submit").on("click", function () {
+
     let location = $("#location").val();
     localStorage.setItem("city", location);
     console.log(localStorage.getItem("city"));
+
+    if (localStorage.getItem('city') !== null){
+        openweatherCall();
+    }
 });
 
 function renderLink(link, linkname) {
