@@ -1,6 +1,10 @@
-body{
-    background: grey;
+body {
+    background-image: url("images/rainybackground.jpg");
+    background-position: static; 
+    background-size: cover;
+    transition: background-image 1s linear;
 }
+
 .row{
     background: lightblue;
     padding: 0px;
@@ -24,17 +28,24 @@ img{
 
 .container{
     background: whitesmoke;
-}
-.container1{
+    border-radius: 25px;
+    padding: 20px;
 
+}
+
+.container1{
     text-align: center;
 }
+
+
 form{
     text-align: center;
     padding: 20px;
+    padding-top: 0px;
 }
- .form-group{
+.form-group{
     padding: 40px;
+    padding-top: 0px;
     margin: 20px;
 }
 
@@ -44,13 +55,22 @@ form{
     font-family: 'McLaren', cursive;
 }
 
-body {
-    background-image: url("images/clouds.jpg");
-    background-position: static; 
-    background-size: cover;
+h4 {
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-family: 'McLaren', cursive; 
+    font-size: 20px;
 }
 
 .bio{
     background: whitesmoke;
+    opacity: .9;
+    margin: 20px;
+    border-radius: 25px;
+    padding: 20px;
 }
 
+.clear{
+    background: none;
+}
