@@ -36,9 +36,11 @@ img{
 form{
     text-align: center;
     padding: 20px;
+    padding-top: 0px;
 }
- .form-group{
+.form-group{
     padding: 40px;
+    padding-top: 0px;
     margin: 20px;
 }
 
@@ -46,6 +48,14 @@ form{
     font-size: 26px;
     margin: 0 auto;
     font-family: 'McLaren', cursive;
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-family: 'McLaren', cursive; 
+    font-size: 20px;
 }
 
 
