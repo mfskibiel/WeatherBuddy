@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About</title>
+    <title>WeatherBuddy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+    <div class="row">
+        <!-- <div class="col-3">
+
+        </div> -->
+        <div class="col-7">
+                <a href="index.html">  <img src="images/weatherBuddy.png" class="logo"/> </a>
+        </div>
+        <div class="col-5">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Team.html">Our Team</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class='container'>
+            <h2> <span class="badge badge-primary">About</span></h2>
+        <div class="content">
+            <p> WeatherBuddy combines two things that are nearly impossible to avoid: Mother Nature and music.
+                We have provided a way to input your current location, and based on the weather at your location, we will
+                supply you with an awesome playlist from Spotify. From sunshine to snowfall, we have you covered!
+                If you were wishing you were in another city, don't fret! Feel free to input a desired location and 
+                get a playlist to compliment the weather there. 
+            </p>
+        </div>
+        
+    </div>
+    <!-- Keep at bottom so js runs after DOM rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src='app.js'></script>
+    <script src='main.js'></script>
 </body>
+
 </html>
