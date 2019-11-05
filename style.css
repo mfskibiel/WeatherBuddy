@@ -33,6 +33,10 @@ img{
 
 }
 
+.container1{
+    text-align: center;
+}
+
 form{
     text-align: center;
     padding: 20px;
@@ -58,9 +62,14 @@ h4 {
     font-size: 20px;
 }
 
+.bio{
+    background: whitesmoke;
+    opacity: .9;
+    margin: 20px;
+    border-radius: 25px;
+    padding: 20px;
+}
 
-
-
-
-
-
+.clear{
+    background: none;
+}
