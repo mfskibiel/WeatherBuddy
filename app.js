@@ -58,9 +58,9 @@ function spotifyCall(weatherName) {
     });
 };
 
-function openweatherCall(){
+function openweatherCall() {
     // get weather condition
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${localStorage.getItem("city")}&apikey=78c2217a0f8204684461043d3c5ef215`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${localStorage.getItem("city")}&apikey=78c2217a0f8204684461043d3c5ef215`;
 
     $.ajax({
         url: url,
