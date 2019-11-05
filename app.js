@@ -37,7 +37,8 @@ $("#submit").on("click", function () {
 
 function renderLink(link, linkname) {
     var newdiv = $("<div>").html(`<a href=${link}>${linkname}</a>`);
-    $("body").append(newdiv);
+    newdiv.addClass("playlist");
+    $("form").append(newdiv);
 };
 
 function spotifyCall(weatherName) {
