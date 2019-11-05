@@ -37,11 +37,11 @@
     </div>
     <div class='container'>
         <h4>Enter your city, click the button, and get a playlist to match the current weather!</h4>
-        <form>
+        <form class="form">
             <div class="form-group input-group-prepend">
                 <span class="input-group-text">Location</span>
-                <!-- <label for="locationInput">Location</label> -->
-                <input class="form-control" id="location" rows="3"></input>
+
+                <input class="form-control" id="location" name="search" type="text" placeholder="City" rows="3"></input>
             </div>
 
 
@@ -51,7 +51,11 @@
         </form>
     </div>
     <!-- Keep at bottom so js runs after DOM rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src='app.js'></script>
+    <script src='main.js'></script>
 </body>
 
 </html>
