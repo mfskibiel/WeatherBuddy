@@ -1,4 +1,3 @@
-
 const imageArr = ["images/rainybackground.jpg", "images/cloudy.jpg", "images/snowy.jpg", "images/storms.jpg", "images/sunshine.jpg", "images/tornado.jpg"]
 
 let i = 1;
