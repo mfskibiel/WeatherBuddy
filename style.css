@@ -5,6 +5,15 @@ body {
     transition: background-image 1s linear;
 }
 
+h2{
+    font-family: 'McLaren', cursive;
+    font-size: 60px;
+}
+
+.badge-primary{
+
+    background: lightblue;
+}
 .row{
     background: lightblue;
     padding: 0px;
@@ -115,3 +124,7 @@ h4 {
     padding: 20px;
 }
 
+p{
+    font-family: 'McLaren', cursive;
+    font-size: 18px;
+}
