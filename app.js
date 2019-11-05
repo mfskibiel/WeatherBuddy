@@ -1,5 +1,5 @@
 
-const imageArr = ["images/clouds.jpg", "images/rainybackground.jpg", "images/sunnybackground.jpg", "images/snowybackground.jpeg", "images/storms.jpg"]
+const imageArr = ["images/rainybackground.jpg", "images/cloudy.jpg", "images/snowy.jpg", "images/storms.jpg", "images/sunshine.jpg", "images/tornado.jpg"]
 
 let i = 1;
 
@@ -14,7 +14,7 @@ setInterval(function () {
     if (i >= imageArr.length) {
         i = 0;
     }
-}, 3000);
+}, 4000);
 
 // if hash exists
 if (window.location.hash !== "") {
@@ -25,6 +25,40 @@ if (window.location.hash !== "") {
 
     localStorage.setItem("hash", accessToken);
 
+    openweatherCall();
+
+}
+
+$("#submit").on("click", function () {
+
+    let location = $("#location").val();
+    localStorage.setItem("city", location);
+    console.log(localStorage.getItem("city"));
+});
+
+function renderLink(link, linkname) {
+    var newdiv = $("<div>").html(`<a href=${link}>${linkname}</a>`);
+    $("body").append(newdiv);
+};
+
+function spotifyCall(weatherName) {
+    return $.ajax({
+        url: 'https://api.spotify.com/v1/users/mfskibiel/playlists/',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem("hash"),
+        }
+    }).then(function (oData) {
+        const playlists = oData.items;
+        for (playlist of playlists) {
+            if (playlist.name === weatherName) {
+                var playlistLink = playlist.external_urls.spotify;
+                return playlistLink;
+            }
+        }
+    });
+};
+
+function openweatherCall(){
     // get weather condition
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${localStorage.getItem("city")}&apikey=78c2217a0f8204684461043d3c5ef215`;
 
@@ -72,31 +106,4 @@ if (window.location.hash !== "") {
         }
     });
 
-    function renderLink(link, linkname) {
-        var newdiv = $("<div>").html(`<a href=${link}>${linkname}</a>`);
-        $("body").append(newdiv);
-    };
-
-    function spotifyCall(weatherName) {
-        return $.ajax({
-            url: 'https://api.spotify.com/v1/users/mfskibiel/playlists/',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem("hash"),
-            }
-        }).then(function (oData) {
-            const playlists = oData.items;
-            for (playlist of playlists) {
-                if (playlist.name === weatherName) {
-                    var playlistLink = playlist.external_urls.spotify;
-                    return playlistLink;
-                }
-            }
-        });
-    };
 }
-
-$("#submit").on("click", function () {
-    let location = $("#location").val();
-    localStorage.setItem("city", location);
-    console.log(localStorage.getItem("city"));
-});
