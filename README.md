@@ -3,7 +3,7 @@
 A web application that lets you get Spotify Playlists that match the weather near you!
 
 ### Team Members
-* Mary Francis Skibiel
+* Mary Frances Skibiel
 * Devante Jones
 * Ugochinyere Anazodo
 * Ross McLane
